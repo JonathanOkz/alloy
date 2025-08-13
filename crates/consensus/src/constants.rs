@@ -11,7 +11,7 @@ pub use alloy_trie::{EMPTY_ROOT_HASH, KECCAK_EMPTY};
 pub const SELECTOR_LEN: usize = 4;
 
 /// Maximum extra data size in a block after genesis
-pub const MAXIMUM_EXTRA_DATA_SIZE: usize = 32;
+pub const MAXIMUM_EXTRA_DATA_SIZE: usize = 128;
 
 /// Multiplier for converting gwei to wei.
 pub const GWEI_TO_WEI: u64 = 1_000_000_000;
