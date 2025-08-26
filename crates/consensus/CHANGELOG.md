@@ -5,11 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.26](https://github.com/alloy-rs/alloy/releases/tag/v1.0.26) - 2025-08-26
+
+### Features
+
+- Add TxHashRef trait and implementations ([#2751](https://github.com/alloy-rs/alloy/issues/2751))
+- Add helpers for encoding block from parts ([#2809](https://github.com/alloy-rs/alloy/issues/2809))
+- Expose alloy trie ([#2773](https://github.com/alloy-rs/alloy/issues/2773))
+
+### Miscellaneous Tasks
+
+- Release 1.0.25
+- Fix warnings ([#2799](https://github.com/alloy-rs/alloy/issues/2799))
+- Add typos ([#2787](https://github.com/alloy-rs/alloy/issues/2787))
+
 ## [1.0.24](https://github.com/alloy-rs/alloy/releases/tag/v1.0.24) - 2025-08-06
 
 ### Features
 
 - Add headerinfo helper type ([#2766](https://github.com/alloy-rs/alloy/issues/2766))
+
+### Miscellaneous Tasks
+
+- Release 1.0.24
 
 ## [1.0.23](https://github.com/alloy-rs/alloy/releases/tag/v1.0.23) - 2025-07-22
 
