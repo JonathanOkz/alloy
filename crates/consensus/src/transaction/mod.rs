@@ -60,6 +60,9 @@ pub use meta::{TransactionInfo, TransactionMeta};
 mod recovered;
 pub use recovered::{Recovered, SignerRecoverable};
 
+mod hashable;
+pub use hashable::TxHashable;
+
 #[cfg(feature = "serde")]
 pub use legacy::{signed_legacy_serde, untagged_legacy_serde};
 
@@ -289,18 +292,6 @@ pub trait SignableTransaction<Signature>: Transaction {
         Self: Sized,
     {
         Signed::new_unhashed(self, signature)
-    }
-}
-
-// TODO(MSRV-1.86): Remove in favor of dyn trait upcasting
-#[doc(hidden)]
-impl<S: 'static> dyn SignableTransaction<S> {
-    pub fn __downcast_ref<T: any::Any>(&self) -> Option<&T> {
-        if any::Any::type_id(self) == any::TypeId::of::<T>() {
-            unsafe { Some(&*(self as *const _ as *const T)) }
-        } else {
-            None
-        }
     }
 }
 
