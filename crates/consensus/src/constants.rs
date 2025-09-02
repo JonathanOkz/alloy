@@ -10,8 +10,9 @@ pub use alloy_trie::{EMPTY_ROOT_HASH, KECCAK_EMPTY};
 /// The first four bytes of the call data for a function call specifies the function to be called.
 pub const SELECTOR_LEN: usize = 4;
 
-/// Maximum extra data size in a block after genesis
-pub const MAXIMUM_EXTRA_DATA_SIZE: usize = 106;
+/// Maximum extra data size in a block after genesis.
+/// Set to 107 to allow 8-byte timestamp prefix + 99-byte signature tuple (including v byte).
+pub const MAXIMUM_EXTRA_DATA_SIZE: usize = 107;
 
 /// Multiplier for converting gwei to wei.
 pub const GWEI_TO_WEI: u64 = 1_000_000_000;
