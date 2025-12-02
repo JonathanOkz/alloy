@@ -111,6 +111,17 @@ impl<E> ErrorPayload<E> {
             return true;
         }
 
+        // This is a websocket specific error for too many concurrent requests on the same
+        // connection <https://github.com/ithacaxyz/relay/issues/1352>
+        if self.code == 1008 {
+            return true;
+        }
+
+        // This is retryable cloudflare error <https://github.com/foundry-rs/foundry/issues/11667>
+        if self.code == -32055 {
+            return true;
+        }
+
         match self.message.as_ref() {
             // this is commonly thrown by infura and is apparently a load balancer issue, see also <https://github.com/MetaMask/metamask-extension/issues/7234>
             "header not found" => true,
@@ -122,6 +133,7 @@ impl<E> ErrorPayload<E> {
                     || msg.contains("too many requests")
                     || msg.contains("credits limited")
                     || msg.contains("request limit")
+                    || msg.contains("maximum number of concurrent requests")
             }
         }
     }
@@ -424,5 +436,29 @@ mod test {
         let decoded_err = payload.as_decoded_error::<Errors::SomeCustomError>().unwrap();
 
         assert_eq!(decoded_err, Errors::SomeCustomError { a: U256::from(1) });
+    }
+
+    #[test]
+    fn max_concurrent_requests() {
+        let json = r#"{"code":1008,"message":"You have exceeded the maximum number of concurrent requests on a single WebSocket. At most 200 concurrent requests are allowed per WebSocket."}"#;
+        let payload: ErrorPayload = serde_json::from_str(json).unwrap();
+        assert!(payload.is_retry_err());
+    }
+
+    #[test]
+    fn extract_transaction_hash_box_raw_value() {
+        use crate::RpcError;
+        use alloy_primitives::B256;
+        use serde_json::value::RawValue;
+
+        let tx_hash = "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef";
+        let json = format!(r#"{{"code":5,"message":"insufficient funds","data":"{}"}}"#, tx_hash);
+
+        let error_payload: ErrorPayload = serde_json::from_str(&json).unwrap();
+        let rpc_error: RpcError<(), Box<RawValue>> = RpcError::ErrorResp(error_payload);
+
+        let extracted_hash = rpc_error.tx_hash_data();
+        assert!(extracted_hash.is_some());
+        assert_eq!(extracted_hash.unwrap(), tx_hash.parse::<B256>().unwrap());
     }
 }

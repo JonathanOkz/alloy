@@ -50,11 +50,19 @@ mod tenderly;
 #[cfg(feature = "tenderly-api")]
 pub use tenderly::TenderlyApi;
 
+#[cfg(feature = "tenderly-admin-api")]
+mod tenderly_admin;
+#[cfg(feature = "tenderly-admin-api")]
+pub use tenderly_admin::TenderlyAdminApi;
+
 #[cfg(feature = "mev-api")]
 mod mev;
 
 #[cfg(feature = "mev-api")]
-pub use mev::{sign_flashbots_payload, MevApi, MevBuilder, FLASHBOTS_SIGNATURE_HEADER};
+pub use mev::{
+    sign_flashbots_payload, verify_flashbots_signature, FlashbotsSignatureError, MevApi,
+    MevBuilder, FLASHBOTS_SIGNATURE_HEADER,
+};
 
 #[cfg(test)]
 pub(crate) mod test {

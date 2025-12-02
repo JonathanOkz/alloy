@@ -5,6 +5,113 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2](https://github.com/alloy-rs/alloy/releases/tag/v1.1.2) - 2025-11-20
+
+### Miscellaneous Tasks
+
+- [node-bindings/anvil] Unify startup timeout with shared NODE_STARTUP_TIMEOUT ([#3193](https://github.com/alloy-rs/alloy/issues/3193))
+
+## [1.1.1](https://github.com/alloy-rs/alloy/releases/tag/v1.1.1) - 2025-11-13
+
+### Miscellaneous Tasks
+
+- Release 1.1.1
+
+## [1.1.0](https://github.com/alloy-rs/alloy/releases/tag/v1.1.0) - 2025-11-04
+
+### Miscellaneous Tasks
+
+- Release 1.1.0
+
+## [1.0.42](https://github.com/alloy-rs/alloy/releases/tag/v1.0.42) - 2025-10-31
+
+### Miscellaneous Tasks
+
+- Release 1.0.42
+- Release 1.0.41
+
+### Other
+
+- [geth] Remove duplicate --miner.etherbase arg in Clique mode ([#3050](https://github.com/alloy-rs/alloy/issues/3050))
+
+## [1.0.40](https://github.com/alloy-rs/alloy/releases/tag/v1.0.40) - 2025-10-17
+
+### Miscellaneous Tasks
+
+- Release 1.0.40
+- Release 1.0.40
+
+## [1.0.39](https://github.com/alloy-rs/alloy/releases/tag/v1.0.39) - 2025-10-16
+
+### Miscellaneous Tasks
+
+- Release 1.0.39
+
+## [1.0.38](https://github.com/alloy-rs/alloy/releases/tag/v1.0.38) - 2025-10-08
+
+### Miscellaneous Tasks
+
+- Release 1.0.38 ([#3007](https://github.com/alloy-rs/alloy/issues/3007))
+
+## [1.0.37](https://github.com/alloy-rs/alloy/releases/tag/v1.0.37) - 2025-09-30
+
+### Miscellaneous Tasks
+
+- Release 1.0.37
+- Align tracing targets ([#2932](https://github.com/alloy-rs/alloy/issues/2932))
+- Remove feature(doc_auto_cfg) ([#2941](https://github.com/alloy-rs/alloy/issues/2941))
+
+## [1.0.36](https://github.com/alloy-rs/alloy/releases/tag/v1.0.36) - 2025-09-24
+
+### Miscellaneous Tasks
+
+- Release 1.0.36
+
+## [1.0.35](https://github.com/alloy-rs/alloy/releases/tag/v1.0.35) - 2025-09-22
+
+### Miscellaneous Tasks
+
+- Release 1.0.35
+
+## [1.0.34](https://github.com/alloy-rs/alloy/releases/tag/v1.0.34) - 2025-09-21
+
+### Bug Fixes
+
+- [node-bindings] Correct docs for Anvil chain_id, Geth new, and Reth chain_or_path ([#2904](https://github.com/alloy-rs/alloy/issues/2904))
+
+### Miscellaneous Tasks
+
+- Release 1.0.34
+
+## [1.0.33](https://github.com/alloy-rs/alloy/releases/tag/v1.0.33) - 2025-09-19
+
+### Miscellaneous Tasks
+
+- Release 1.0.33
+
+## [1.0.32](https://github.com/alloy-rs/alloy/releases/tag/v1.0.32) - 2025-09-16
+
+### Miscellaneous Tasks
+
+- Release 1.0.32
+
+### Other
+
+- Avoid panic in AnvilInstance::drop; fail soft on kill error ([#2878](https://github.com/alloy-rs/alloy/issues/2878))
+
+## [1.0.31](https://github.com/alloy-rs/alloy/releases/tag/v1.0.31) - 2025-09-15
+
+### Miscellaneous Tasks
+
+- Release 1.0.31
+- Avoid panic on TempDir cleanup in node-bindings utils ([#2860](https://github.com/alloy-rs/alloy/issues/2860))
+
+## [1.0.30](https://github.com/alloy-rs/alloy/releases/tag/v1.0.30) - 2025-09-03
+
+### Miscellaneous Tasks
+
+- Release 1.0.30
+
 ## [1.0.29](https://github.com/alloy-rs/alloy/releases/tag/v1.0.29) - 2025-09-03
 
 ### Miscellaneous Tasks

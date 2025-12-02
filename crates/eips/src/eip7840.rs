@@ -2,7 +2,7 @@
 
 use crate::{
     eip4844::{self, DATA_GAS_PER_BLOB},
-    eip7594, eip7691,
+    eip7594, eip7691, eip7892,
 };
 
 /// BLOB_BASE_COST represents the minimum execution gas required to include a blob in a block,
@@ -18,6 +18,7 @@ pub const BLOB_BASE_COST: u64 = 2_u64.pow(13);
     feature = "serde",
     serde(from = "serde_impl::SerdeHelper", into = "serde_impl::SerdeHelper")
 )]
+#[cfg_attr(feature = "borsh", derive(borsh::BorshSerialize, borsh::BorshDeserialize))]
 pub struct BlobParams {
     /// Target blob count for the block.
     pub target_blob_count: u64,
@@ -77,6 +78,26 @@ impl BlobParams {
         }
     }
 
+    /// [`BlobParams`] for the [EIP-7892](https://eips.ethereum.org/EIPS/eip-7892) Blob parameter only hardfork BPO1.
+    pub const fn bpo1() -> Self {
+        Self {
+            target_blob_count: eip7892::BPO1_TARGET_BLOBS_PER_BLOCK,
+            max_blob_count: eip7892::BPO1_MAX_BLOBS_PER_BLOCK,
+            update_fraction: eip7892::BPO1_BASE_UPDATE_FRACTION as u128,
+            ..Self::osaka()
+        }
+    }
+
+    /// [`BlobParams`] for the [EIP-7892](https://eips.ethereum.org/EIPS/eip-7892) Blob parameter only hardfork BPO2
+    pub const fn bpo2() -> Self {
+        Self {
+            target_blob_count: eip7892::BPO2_TARGET_BLOBS_PER_BLOCK,
+            max_blob_count: eip7892::BPO2_MAX_BLOBS_PER_BLOCK,
+            update_fraction: eip7892::BPO2_BASE_UPDATE_FRACTION as u128,
+            ..Self::osaka()
+        }
+    }
+
     /// Set max blobs per transaction on [`BlobParams`].
     pub const fn with_max_blobs_per_tx(mut self, max_blobs_per_tx: u64) -> Self {
         self.max_blobs_per_tx = max_blobs_per_tx;
@@ -106,7 +127,7 @@ impl BlobParams {
     /// Calculates the `excess_blob_gas` value for the next block based on the current block
     /// `excess_blob_gas` and `blob_gas_used`.
     #[inline]
-    // #[deprecated(note = "Use `next_block_excess_blob_gas_osaka` instead")]
+    #[deprecated(note = "Use `next_block_excess_blob_gas_osaka` instead")]
     pub const fn next_block_excess_blob_gas(
         &self,
         excess_blob_gas: u64,
@@ -161,7 +182,7 @@ mod serde_impl {
         max_blob_count: u64,
         #[serde(rename = "target")]
         target_blob_count: u64,
-        #[serde(skip_serializing)]
+        #[serde(skip)]
         min_blob_fee: Option<u128>,
     }
 
