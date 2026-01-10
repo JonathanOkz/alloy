@@ -37,7 +37,10 @@ mod nonce;
 pub use nonce::{CachedNonceManager, NonceFiller, NonceManager, SimpleNonceManager};
 
 mod gas;
-pub use gas::{BlobGasFiller, GasFillable, GasFiller};
+pub use gas::{
+    BlobGasEstimator, BlobGasEstimatorFn, BlobGasEstimatorFunction, BlobGasFiller, GasFillable,
+    GasFiller,
+};
 
 mod join_fill;
 pub use join_fill::JoinFill;
@@ -312,6 +315,16 @@ where
     /// Creates a new `FillProvider` with the given filler and inner provider.
     pub fn new(inner: P, filler: F) -> Self {
         Self { inner, filler, _pd: PhantomData }
+    }
+
+    /// Returns a reference to the filler.
+    pub const fn filler(&self) -> &F {
+        &self.filler
+    }
+
+    /// Returns a mutable reference to the filler.
+    pub const fn filler_mut(&mut self) -> &mut F {
+        &mut self.filler
     }
 
     /// Joins a filler to this provider
