@@ -2086,7 +2086,8 @@ impl ExecutionPayloadBodyV1 {
 
     /// Converts a [`alloy_consensus::Block`] into an execution payload body.
     pub fn from_block<T: Encodable2718, H>(block: Block<T, H>) -> Self {
-        Self::new(block.body.withdrawals.clone(), block.body.transactions())
+        let BlockBody { withdrawals, transactions, .. } = block.into_body();
+        Self::new(withdrawals, transactions.iter())
     }
 }
 
@@ -2340,6 +2341,11 @@ impl ExecutionData {
     /// Return the withdrawals for the payload or attributes.
     pub const fn withdrawals(&self) -> Option<&Vec<Withdrawal>> {
         self.payload.withdrawals()
+    }
+
+    /// Returns the number of transactions in the payload.
+    pub const fn transaction_count(&self) -> usize {
+        self.payload.transactions().len()
     }
 
     /// Tries to create a new unsealed block from the given payload and payload sidecar.
