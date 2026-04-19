@@ -5,6 +5,256 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
+
+### Bug Fixes
+
+- [provider] Fall back to RPC on get_logs cache deserialization failure ([#3859](https://github.com/alloy-rs/alloy/issues/3859))
+- [provider] Error all callers on batch len mismatch ([#3827](https://github.com/alloy-rs/alloy/issues/3827))
+- Optimism network incompatible with ProviderBuilder::new constructor ([#3686](https://github.com/alloy-rs/alloy/issues/3686))
+- [network] Fail fast on unknown AnyNetwork signing and 2718 encoding ([#3794](https://github.com/alloy-rs/alloy/issues/3794))
+- [provider] Match multicall tuple impls with alloy-core ([#3869](https://github.com/alloy-rs/alloy/issues/3869))
+- [pubsub] Recover request-path backend drops ([#3846](https://github.com/alloy-rs/alloy/issues/3846))
+- [provider] Fallback to get_block when get_header RPCs unsupported ([#3850](https://github.com/alloy-rs/alloy/issues/3850))
+- [provider] Skip caching missing transaction lookups ([#3826](https://github.com/alloy-rs/alloy/issues/3826))
+- [signer-gcp] Use rustls instead of native-tls for gcloud-sdk ([#3844](https://github.com/alloy-rs/alloy/issues/3844))
+
+### Dependencies
+
+- [dep] Bump jsonwebtoken v10.3.0 fix cve ([#3754](https://github.com/alloy-rs/alloy/issues/3754))
+- "revert: "chore: bump ethereum_ssz to 0.10 and tree_hash to 0.12"" ([#3840](https://github.com/alloy-rs/alloy/issues/3840))
+- [deps] Bump crate-ci/typos from 1.44.0 to 1.45.0 ([#3868](https://github.com/alloy-rs/alloy/issues/3868))
+- [deps] Bump taiki-e/install-action from 2.69.7 to 2.74.0 ([#3867](https://github.com/alloy-rs/alloy/issues/3867))
+
+### Documentation
+
+- [provider] Clarify feature requirements for anvil helpers ([#3858](https://github.com/alloy-rs/alloy/issues/3858))
+
+### Features
+
+- Make AnyTransactionReceipt a dedicated type ([#3153](https://github.com/alloy-rs/alloy/issues/3153))
+- [rpc-types-anvil] Add client_semver to Metadata ([#3877](https://github.com/alloy-rs/alloy/issues/3877))
+- [rpc-types-engine] Add hidden setters to ExecutionPayload ([#3875](https://github.com/alloy-rs/alloy/issues/3875))
+- Update PooledTransaction to use EIP-7594 sidecar ([#3468](https://github.com/alloy-rs/alloy/issues/3468))
+- [provider] Add comprehensive Tenderly RPC API methods ([#3120](https://github.com/alloy-rs/alloy/issues/3120))
+- [rpc-types-eth] Add `max_used_gas` to `SimCallResult` ([#3707](https://github.com/alloy-rs/alloy/issues/3707))
+- Non-exhaustive ChainConfig ([#3566](https://github.com/alloy-rs/alloy/issues/3566))
+- Add amsterdam fields ([#3871](https://github.com/alloy-rs/alloy/issues/3871))
+- [consensus] Change default tx env type
+- [transport] Add ThrottleLayer burst configuration ([#3854](https://github.com/alloy-rs/alloy/issues/3854))
+- [ens] Use Universal Resolver for forward name resolution ([#3866](https://github.com/alloy-rs/alloy/issues/3866))
+- [network] Generic TransactionResponse to TransactionRequest conversion
+- [ens] Use Universal Resolver for forward name resolution ([#3866](https://github.com/alloy-rs/alloy/issues/3866))
+- [rpc-types-trace] Add depth-first iterator for CallFrame ([#3768](https://github.com/alloy-rs/alloy/issues/3768))
+- [rpc-types-eth] Add optional timestamp field to Transaction
+- [rpc-types-eth] Parse data field on eth_simulateV1 errors
+- [mux-tracer] Support JS tracer in MUX tracer. ([#2442](https://github.com/alloy-rs/alloy/issues/2442))
+- [alloy-provider] Add methods for creating custom gas estimator for `GasFiller` ([#3849](https://github.com/alloy-rs/alloy/issues/3849))
+- [provider] Add more-tuple-impls feature for multicall ([#3861](https://github.com/alloy-rs/alloy/issues/3861))
+- [rpc-types-debug] Add header helpers to ExecutionWitness ([#3862](https://github.com/alloy-rs/alloy/issues/3862))
+- Add network field to `NodeInfo` ([#3851](https://github.com/alloy-rs/alloy/issues/3851))
+
+### Miscellaneous Tasks
+
+- Release 2.0.0
+- Allow unused ignored advisories ([#3883](https://github.com/alloy-rs/alloy/issues/3883))
+- Make _non_exhaustive pub ([#3873](https://github.com/alloy-rs/alloy/issues/3873))
+- Added feature rlp to eip7928 ([#3865](https://github.com/alloy-rs/alloy/issues/3865))
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+
+### Other
+
+- Support NonZero quantity types ([#3876](https://github.com/alloy-rs/alloy/issues/3876))
+- "revert: remove transactionReceipts subscription kind" ([#3410](https://github.com/alloy-rs/alloy/issues/3410))
+
+### Refactor
+
+- [network] Extract `NetworkTransactionBuilder` from `TransactionBuilder` ([#3344](https://github.com/alloy-rs/alloy/issues/3344))
+- [network] Unify EIP-4844 tx builder trait
+- [pubsub] Remove duplicate dispatch logic in reconnect() ([#3760](https://github.com/alloy-rs/alloy/issues/3760))
+
+## [1.8.2](https://github.com/alloy-rs/alloy/releases/tag/v1.8.2) - 2026-03-26
+
+### Bug Fixes
+
+- [serde] Fix off-by-one in JsonStorageKey length check ([#3843](https://github.com/alloy-rs/alloy/issues/3843))
+
+### Miscellaneous Tasks
+
+- Release 1.8.2
+- Release 1.8.2
+- Release 1.8.2
+
+### Other
+
+- "fix(serde): validate JsonStorageKey length during deserialization" ([#3842](https://github.com/alloy-rs/alloy/issues/3842))
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Dependencies
+
+- "chore: bump ethereum_ssz to 0.10 and tree_hash to 0.12" ([#3839](https://github.com/alloy-rs/alloy/issues/3839))
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+
+## [1.8.0](https://github.com/alloy-rs/alloy/releases/tag/v1.8.0) - 2026-03-25
+
+### Bug Fixes
+
+- [rpc-client] Detect `is_local` in `connect_with_config` ([#3837](https://github.com/alloy-rs/alloy/issues/3837))
+- Better arbitrary impl for header ([#3829](https://github.com/alloy-rs/alloy/issues/3829))
+- [node-bindings] Use graceful shutdown for anvil ([#3824](https://github.com/alloy-rs/alloy/issues/3824))
+- [build] Bump `gcloud-sdk` `0.27.4` -> `0.29.0` for `reqwest` `0.13` compatibility ([#3823](https://github.com/alloy-rs/alloy/issues/3823))
+- [transport] Return clear error when no transports available ([#3806](https://github.com/alloy-rs/alloy/issues/3806))
+- [rpc-client] Return error instead of panic on unexpected batch response ([#3807](https://github.com/alloy-rs/alloy/issues/3807))
+- [consensus] Delegate is_create() for Extended::Other instead of hardcoding false ([#3796](https://github.com/alloy-rs/alloy/issues/3796))
+- [provider] Detect EIP-7594 blob sidecars in BlobGasFiller ([#3815](https://github.com/alloy-rs/alloy/issues/3815))
+- [rpc-types-debug] Enable serde_with alloc for no_std ([#3811](https://github.com/alloy-rs/alloy/issues/3811))
+- [eips] Eip 7594 replace unoptimized iter ([#3804](https://github.com/alloy-rs/alloy/issues/3804))
+- [flashblocks] Correct receipts type in FlashBlock metadata ([#3795](https://github.com/alloy-rs/alloy/issues/3795))
+- [provider] Use pending nonce in CachedNonceManager init ([#3802](https://github.com/alloy-rs/alloy/issues/3802))
+- [serde] Validate JsonStorageKey length during deserialization ([#3792](https://github.com/alloy-rs/alloy/issues/3792))
+
+### Dependencies
+
+- [deps] Bump taiki-e/install-action from 2.68.34 to 2.69.7 ([#3830](https://github.com/alloy-rs/alloy/issues/3830))
+- [deps] Bump Swatinem/rust-cache from 2.8.2 to 2.9.1 ([#3813](https://github.com/alloy-rs/alloy/issues/3813))
+- [deps] Bump taiki-e/install-action from 2.68.25 to 2.68.34 ([#3814](https://github.com/alloy-rs/alloy/issues/3814))
+- [deps] Bump taiki-e/install-action from 2.68.16 to 2.68.25 ([#3788](https://github.com/alloy-rs/alloy/issues/3788))
+
+### Features
+
+- [provider] Add `watch_headers` to `Provider` trait ([#3800](https://github.com/alloy-rs/alloy/issues/3800))
+- [rpc-types-eth] Add parent beacon root to BlockOverrides ([#3798](https://github.com/alloy-rs/alloy/issues/3798))
+
+### Miscellaneous Tasks
+
+- Release 1.8.0
+- Release 1.8.0
+- Add `id` attributes to issue templates ([#3822](https://github.com/alloy-rs/alloy/issues/3822))
+- [eips] Add doc to let check happy ([#3797](https://github.com/alloy-rs/alloy/issues/3797))
+- [rpc] Clippy happy with outer match ([#3793](https://github.com/alloy-rs/alloy/issues/3793))
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- [node-bindings] Implicitly enable IPC when setting ipc_path ([#3764](https://github.com/alloy-rs/alloy/issues/3764))
+- [pubsub] Remove duplicate log on subscription deserialization failure ([#3773](https://github.com/alloy-rs/alloy/issues/3773))
+- [ci] Add alloy-consensus-any to no_std check ([#3772](https://github.com/alloy-rs/alloy/issues/3772))
+- [eips] Use post-EIP-2028 non-zero byte calldata cost (16) ([#3755](https://github.com/alloy-rs/alloy/issues/3755))
+- [rpc-types-trace] Skip serializing None fields in TraceFilter ([#3739](https://github.com/alloy-rs/alloy/issues/3739))
+- [rpc-types-mev] Add Copy derive to FunctionSelector ([#3725](https://github.com/alloy-rs/alloy/issues/3725))
+- [rpc-types-eth] Matches_block always returns true for AtBlockHash… ([#3734](https://github.com/alloy-rs/alloy/issues/3734))
+- Correct Debug trait name for PendingBlock ([#3738](https://github.com/alloy-rs/alloy/issues/3738))
+- Correct Debug trait name for `JwtSecret` ([#3736](https://github.com/alloy-rs/alloy/issues/3736))
+- [rpc-types] Off-by-one in TransactionConditional has_exceeded checks ([#3721](https://github.com/alloy-rs/alloy/issues/3721))
+- [consensus] Use unchecked recovery in recover_unchecked_with_buf default impl ([#3719](https://github.com/alloy-rs/alloy/issues/3719))
+- [ci] Catch background process failures in install_test_binaries.sh ([#3718](https://github.com/alloy-rs/alloy/issues/3718))
+- Resolve infinite recursion in Sealable::hash_slow for Header ([#3709](https://github.com/alloy-rs/alloy/issues/3709))
+
+### Dependencies
+
+- [deps] Bump crate-ci/typos from 1.43.5 to 1.44.0 ([#3767](https://github.com/alloy-rs/alloy/issues/3767))
+- [deps] Bump taiki-e/install-action from 2.68.8 to 2.68.16 ([#3766](https://github.com/alloy-rs/alloy/issues/3766))
+- Bump deps ([#3712](https://github.com/alloy-rs/alloy/issues/3712))
+- Bump ethereum_ssz to 0.10 and tree_hash to 0.12 ([#3742](https://github.com/alloy-rs/alloy/issues/3742))
+- [deps] Bump taiki-e/install-action from 2.68.0 to 2.68.8 ([#3737](https://github.com/alloy-rs/alloy/issues/3737))
+
+### Documentation
+
+- [rpc-types-eth] Fix incorrect error code in SimulateError ([#3762](https://github.com/alloy-rs/alloy/issues/3762))
+
+### Features
+
+- [alloy] Support no_std for the meta crate ([#3786](https://github.com/alloy-rs/alloy/issues/3786))
+- [consensus] Add Block::from_transactions constructor ([#3784](https://github.com/alloy-rs/alloy/issues/3784))
+- [transport] Parse retry backoff hint from RPC error messages ([#3780](https://github.com/alloy-rs/alloy/issues/3780))
+- Add support for chunked queries ([#3747](https://github.com/alloy-rs/alloy/issues/3747))
+- [network] Signature flow generic over `Network` ([#3724](https://github.com/alloy-rs/alloy/issues/3724))
+- [eips] Allow custom system contracts in EIP-7910 ([#3765](https://github.com/alloy-rs/alloy/issues/3765))
+- Add `reth_get_block_execution_outcome` to `RethProviderExt` ([#3751](https://github.com/alloy-rs/alloy/issues/3751))
+- Impl From<Recovered<T>> for TransactionRequest ([#3731](https://github.com/alloy-rs/alloy/issues/3731))
+- [ws] Auto-extract basic auth from URL in WsConnect ([#3728](https://github.com/alloy-rs/alloy/issues/3728))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+
+### Refactor
+
+- [rpc-types-eth] Centralize SimulateError codes ([#3769](https://github.com/alloy-rs/alloy/issues/3769))
+- [node-bindings] Remove redundant TempDir::close calls ([#3756](https://github.com/alloy-rs/alloy/issues/3756))
+- [transport] Deduplicate DualTransport constructor logic ([#3746](https://github.com/alloy-rs/alloy/issues/3746))
+- [provider] Reuse helper functions in block_and_aggregate / try_block_and_aggregate ([#3752](https://github.com/alloy-rs/alloy/issues/3752))
+- [node-bindings] Remove redundant bounds checks in extract_value ([#3735](https://github.com/alloy-rs/alloy/issues/3735))
+
+### Testing
+
+- Remove flaky test_erc20_token_polygon test ([#3727](https://github.com/alloy-rs/alloy/issues/3727))
+
+## [1.7.3](https://github.com/alloy-rs/alloy/releases/tag/v1.7.3) - 2026-02-18
+
+### Miscellaneous Tasks
+
+- Release 1.7.3
+- Release 1.7.3
+- Release 1.7.2
+
+### Performance
+
+- [engine] Remove serde(flatten) from execution payload types ([#3713](https://github.com/alloy-rs/alloy/issues/3713))
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
+
+### Features
+
+- [consensus] Add `EthereumReceipt::map_logs` ([#3710](https://github.com/alloy-rs/alloy/issues/3710))
+- [rpc-types-eth] Derive Default for `SimCallResult` ([#3708](https://github.com/alloy-rs/alloy/issues/3708))
+
+### Miscellaneous Tasks
+
+- Release 1.7.1
+
+## [1.7.0](https://github.com/alloy-rs/alloy/releases/tag/v1.7.0) - 2026-02-17
+
+### Bug Fixes
+
+- Actually retry failed block fetches instead of skipping them ([#3698](https://github.com/alloy-rs/alloy/issues/3698))
+
+### Dependencies
+
+- [deps] Bump crate-ci/typos from 1.43.4 to 1.43.5 ([#3701](https://github.com/alloy-rs/alloy/issues/3701))
+- [deps] Bump taiki-e/install-action from 2.67.27 to 2.68.0 ([#3702](https://github.com/alloy-rs/alloy/issues/3702))
+- Remove jsonrpsee dependencies ([#3690](https://github.com/alloy-rs/alloy/issues/3690))
+- Bump MSRV to 1.91 ([#3691](https://github.com/alloy-rs/alloy/issues/3691))
+- [deps] Bump crate-ci/typos from 1.42.2 to 1.43.4 ([#3671](https://github.com/alloy-rs/alloy/issues/3671))
+- [deps] Bump taiki-e/install-action from 2.67.13 to 2.67.27 ([#3672](https://github.com/alloy-rs/alloy/issues/3672))
+
+### Documentation
+
+- Fix incomplete return condition in next_block_excess_blob_gas ([#3679](https://github.com/alloy-rs/alloy/issues/3679))
+
+### Features
+
+- [consensus] Add `EthereumReceipt` type ported from reth ([#3683](https://github.com/alloy-rs/alloy/issues/3683))
+- [rpc-types-eth] Add TransactionRequest::create() builder method ([#3704](https://github.com/alloy-rs/alloy/issues/3704))
+- [provider] Add get_storage_values for batch storage slot retrieval ([#3692](https://github.com/alloy-rs/alloy/issues/3692))
+- [rpc-types-beacon] Add proposer duties, state validators, and fork types ([#3688](https://github.com/alloy-rs/alloy/issues/3688))
+- Add trait impls for Cow to support Recovered<Cow<'_, T>> ([#3689](https://github.com/alloy-rs/alloy/issues/3689))
+- [provider] Add engine_getBlobsV1/V2 to EngineApi trait ([#3670](https://github.com/alloy-rs/alloy/issues/3670))
+
+### Miscellaneous Tasks
+
+- Release 1.7.0
+- Release 1.7.0
+
+### Other
+
+- Use install-action for zepter ([#3674](https://github.com/alloy-rs/alloy/issues/3674))
+
 ## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
 
 ### Bug Fixes
@@ -13,6 +263,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Miscellaneous Tasks
 
+- Release 1.6.3
 - Release 1.6.3
 
 ## [1.6.2](https://github.com/alloy-rs/alloy/releases/tag/v1.6.2) - 2026-02-09

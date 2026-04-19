@@ -5,15 +5,63 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
+
+### Features
+
+- Add amsterdam fields ([#3871](https://github.com/alloy-rs/alloy/issues/3871))
+- [consensus] Change default tx env type
+
+### Miscellaneous Tasks
+
+- Added feature rlp to eip7928 ([#3865](https://github.com/alloy-rs/alloy/issues/3865))
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+- Release 1.8.2
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Bug Fixes
+
+- [eips] Eip 7594 replace unoptimized iter ([#3804](https://github.com/alloy-rs/alloy/issues/3804))
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+- Release 1.8.0
+- [eips] Add doc to let check happy ([#3797](https://github.com/alloy-rs/alloy/issues/3797))
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- [eips] Use post-EIP-2028 non-zero byte calldata cost (16) ([#3755](https://github.com/alloy-rs/alloy/issues/3755))
+
+### Features
+
+- [eips] Allow custom system contracts in EIP-7910 ([#3765](https://github.com/alloy-rs/alloy/issues/3765))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+- Release 1.7.3
+- Release 1.7.2
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
 
 ### Documentation
 
 - [eips] Clarify blob_base_cost default values for different hardforks ([#3664](https://github.com/alloy-rs/alloy/issues/3664))
 - [eips] Fix incorrect default precompute value in KZG settings doc ([#3657](https://github.com/alloy-rs/alloy/issues/3657))
 
+### Features
+
+- Add trait impls for Cow to support Recovered<Cow<'_, T>> ([#3689](https://github.com/alloy-rs/alloy/issues/3689))
+
 ### Miscellaneous Tasks
 
+- Release 1.7.1
+- Release 1.7.0
+- Release 1.6.3
 - Release 1.6.2
 
 ### Performance

@@ -5,10 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
+
+### Features
+
+- [rpc-types-trace] Add depth-first iterator for CallFrame ([#3768](https://github.com/alloy-rs/alloy/issues/3768))
+- [mux-tracer] Support JS tracer in MUX tracer. ([#2442](https://github.com/alloy-rs/alloy/issues/2442))
 
 ### Miscellaneous Tasks
 
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+- Release 1.8.2
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+- Release 1.8.0
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- [rpc-types-trace] Skip serializing None fields in TraceFilter ([#3739](https://github.com/alloy-rs/alloy/issues/3739))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+- Release 1.7.3
+- Release 1.7.2
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
+
+### Miscellaneous Tasks
+
+- Release 1.7.1
+- Release 1.7.0
+- Release 1.6.3
 - Release 1.6.2
 
 ## [1.6.1](https://github.com/alloy-rs/alloy/releases/tag/v1.6.1) - 2026-02-03

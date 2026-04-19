@@ -5,14 +5,67 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
 
 ### Features
 
+- Update PooledTransaction to use EIP-7594 sidecar ([#3468](https://github.com/alloy-rs/alloy/issues/3468))
+- Add amsterdam fields ([#3871](https://github.com/alloy-rs/alloy/issues/3871))
+- [consensus] Change default tx env type
+- [rpc-types-eth] Add optional timestamp field to Transaction
+
+### Miscellaneous Tasks
+
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+- Release 1.8.2
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Bug Fixes
+
+- Better arbitrary impl for header ([#3829](https://github.com/alloy-rs/alloy/issues/3829))
+- [consensus] Delegate is_create() for Extended::Other instead of hardcoding false ([#3796](https://github.com/alloy-rs/alloy/issues/3796))
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+- Release 1.8.0
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- [consensus] Use unchecked recovery in recover_unchecked_with_buf default impl ([#3719](https://github.com/alloy-rs/alloy/issues/3719))
+- Resolve infinite recursion in Sealable::hash_slow for Header ([#3709](https://github.com/alloy-rs/alloy/issues/3709))
+
+### Features
+
+- [consensus] Add Block::from_transactions constructor ([#3784](https://github.com/alloy-rs/alloy/issues/3784))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+- Release 1.7.3
+- Release 1.7.2
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
+
+### Documentation
+
+- Fix incomplete return condition in next_block_excess_blob_gas ([#3679](https://github.com/alloy-rs/alloy/issues/3679))
+
+### Features
+
+- [consensus] Add `EthereumReceipt::map_logs` ([#3710](https://github.com/alloy-rs/alloy/issues/3710))
+- [consensus] Add `EthereumReceipt` type ported from reth ([#3683](https://github.com/alloy-rs/alloy/issues/3683))
+- Add trait impls for Cow to support Recovered<Cow<'_, T>> ([#3689](https://github.com/alloy-rs/alloy/issues/3689))
 - [consensus] Add `InMemorySize` trait ([#3656](https://github.com/alloy-rs/alloy/issues/3656))
 
 ### Miscellaneous Tasks
 
+- Release 1.7.1
+- Release 1.7.0
+- Release 1.6.3
 - Release 1.6.2
 
 ## [1.6.1](https://github.com/alloy-rs/alloy/releases/tag/v1.6.1) - 2026-02-03

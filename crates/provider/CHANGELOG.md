@@ -5,15 +5,98 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
+
+### Bug Fixes
+
+- [provider] Fall back to RPC on get_logs cache deserialization failure ([#3859](https://github.com/alloy-rs/alloy/issues/3859))
+- [provider] Error all callers on batch len mismatch ([#3827](https://github.com/alloy-rs/alloy/issues/3827))
+- Optimism network incompatible with ProviderBuilder::new constructor ([#3686](https://github.com/alloy-rs/alloy/issues/3686))
+- [provider] Match multicall tuple impls with alloy-core ([#3869](https://github.com/alloy-rs/alloy/issues/3869))
+- [provider] Fallback to get_block when get_header RPCs unsupported ([#3850](https://github.com/alloy-rs/alloy/issues/3850))
+- [provider] Skip caching missing transaction lookups ([#3826](https://github.com/alloy-rs/alloy/issues/3826))
+
+### Documentation
+
+- [provider] Clarify feature requirements for anvil helpers ([#3858](https://github.com/alloy-rs/alloy/issues/3858))
 
 ### Features
 
+- [provider] Add comprehensive Tenderly RPC API methods ([#3120](https://github.com/alloy-rs/alloy/issues/3120))
+- Add amsterdam fields ([#3871](https://github.com/alloy-rs/alloy/issues/3871))
+- [network] Generic TransactionResponse to TransactionRequest conversion
+- [alloy-provider] Add methods for creating custom gas estimator for `GasFiller` ([#3849](https://github.com/alloy-rs/alloy/issues/3849))
+- [provider] Add more-tuple-impls feature for multicall ([#3861](https://github.com/alloy-rs/alloy/issues/3861))
+
+### Miscellaneous Tasks
+
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+- Release 1.8.2
+
+### Refactor
+
+- [network] Extract `NetworkTransactionBuilder` from `TransactionBuilder` ([#3344](https://github.com/alloy-rs/alloy/issues/3344))
+- [network] Unify EIP-4844 tx builder trait
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Bug Fixes
+
+- [provider] Detect EIP-7594 blob sidecars in BlobGasFiller ([#3815](https://github.com/alloy-rs/alloy/issues/3815))
+- [provider] Use pending nonce in CachedNonceManager init ([#3802](https://github.com/alloy-rs/alloy/issues/3802))
+
+### Features
+
+- [provider] Add `watch_headers` to `Provider` trait ([#3800](https://github.com/alloy-rs/alloy/issues/3800))
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+- Release 1.8.0
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- Correct Debug trait name for PendingBlock ([#3738](https://github.com/alloy-rs/alloy/issues/3738))
+
+### Features
+
+- Add `reth_get_block_execution_outcome` to `RethProviderExt` ([#3751](https://github.com/alloy-rs/alloy/issues/3751))
+- [ws] Auto-extract basic auth from URL in WsConnect ([#3728](https://github.com/alloy-rs/alloy/issues/3728))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+- Release 1.7.3
+- Release 1.7.2
+
+### Refactor
+
+- [provider] Reuse helper functions in block_and_aggregate / try_block_and_aggregate ([#3752](https://github.com/alloy-rs/alloy/issues/3752))
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
+
+### Bug Fixes
+
+- Actually retry failed block fetches instead of skipping them ([#3698](https://github.com/alloy-rs/alloy/issues/3698))
+
+### Dependencies
+
+- Remove jsonrpsee dependencies ([#3690](https://github.com/alloy-rs/alloy/issues/3690))
+
+### Features
+
+- [provider] Add get_storage_values for batch storage slot retrieval ([#3692](https://github.com/alloy-rs/alloy/issues/3692))
+- [provider] Add engine_getBlobsV1/V2 to EngineApi trait ([#3670](https://github.com/alloy-rs/alloy/issues/3670))
 - [provider] Add `with_default_block` to ProviderBuilder ([#3055](https://github.com/alloy-rs/alloy/issues/3055))
 - [provider] Add engine_getPayloadBodiesByHashV2 and engine_getPay… ([#3647](https://github.com/alloy-rs/alloy/issues/3647))
 
 ### Miscellaneous Tasks
 
+- Release 1.7.1
+- Release 1.7.0
+- Release 1.6.3
 - Release 1.6.2
 
 ### Performance

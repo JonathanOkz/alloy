@@ -5,15 +5,93 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
+
+### Features
+
+- [rpc-types-eth] Add `max_used_gas` to `SimCallResult` ([#3707](https://github.com/alloy-rs/alloy/issues/3707))
+- Add amsterdam fields ([#3871](https://github.com/alloy-rs/alloy/issues/3871))
+- [consensus] Change default tx env type
+- [network] Generic TransactionResponse to TransactionRequest conversion
+- [rpc-types-eth] Add optional timestamp field to Transaction
+- [rpc-types-eth] Parse data field on eth_simulateV1 errors
+
+### Miscellaneous Tasks
+
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+- Release 1.8.2
+
+### Other
+
+- "revert: remove transactionReceipts subscription kind" ([#3410](https://github.com/alloy-rs/alloy/issues/3410))
+
+### Refactor
+
+- [network] Unify EIP-4844 tx builder trait
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Bug Fixes
+
+- [provider] Detect EIP-7594 blob sidecars in BlobGasFiller ([#3815](https://github.com/alloy-rs/alloy/issues/3815))
+
+### Features
+
+- [rpc-types-eth] Add parent beacon root to BlockOverrides ([#3798](https://github.com/alloy-rs/alloy/issues/3798))
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+- Release 1.8.0
+- [rpc] Clippy happy with outer match ([#3793](https://github.com/alloy-rs/alloy/issues/3793))
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- [rpc-types-eth] Matches_block always returns true for AtBlockHash… ([#3734](https://github.com/alloy-rs/alloy/issues/3734))
+- [rpc-types] Off-by-one in TransactionConditional has_exceeded checks ([#3721](https://github.com/alloy-rs/alloy/issues/3721))
+
+### Documentation
+
+- [rpc-types-eth] Fix incorrect error code in SimulateError ([#3762](https://github.com/alloy-rs/alloy/issues/3762))
+
+### Features
+
+- Impl From<Recovered<T>> for TransactionRequest ([#3731](https://github.com/alloy-rs/alloy/issues/3731))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+- Release 1.7.3
+- Release 1.7.2
+
+### Refactor
+
+- [rpc-types-eth] Centralize SimulateError codes ([#3769](https://github.com/alloy-rs/alloy/issues/3769))
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
 
 ### Bug Fixes
 
 - [rpc-types] Don't return EIP-4844 type for max_fee_per_blob_gas alone ([#3651](https://github.com/alloy-rs/alloy/issues/3651))
 - [rpc-types-eth] Use hex serialization for SyncStatusMetadata block fields ([#3631](https://github.com/alloy-rs/alloy/issues/3631))
 
+### Dependencies
+
+- Remove jsonrpsee dependencies ([#3690](https://github.com/alloy-rs/alloy/issues/3690))
+
+### Features
+
+- [rpc-types-eth] Derive Default for `SimCallResult` ([#3708](https://github.com/alloy-rs/alloy/issues/3708))
+- [rpc-types-eth] Add TransactionRequest::create() builder method ([#3704](https://github.com/alloy-rs/alloy/issues/3704))
+- [provider] Add get_storage_values for batch storage slot retrieval ([#3692](https://github.com/alloy-rs/alloy/issues/3692))
+
 ### Miscellaneous Tasks
 
+- Release 1.7.1
+- Release 1.7.0
+- Release 1.6.3
 - Release 1.6.2
 
 ### Performance

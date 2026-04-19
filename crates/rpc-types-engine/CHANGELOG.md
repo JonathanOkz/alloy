@@ -5,14 +5,61 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.6.3](https://github.com/alloy-rs/alloy/releases/tag/v1.6.3) - 2026-02-09
+## [2.0.0](https://github.com/alloy-rs/alloy/releases/tag/v2.0.0) - 2026-04-13
+
+### Dependencies
+
+- [dep] Bump jsonwebtoken v10.3.0 fix cve ([#3754](https://github.com/alloy-rs/alloy/issues/3754))
 
 ### Features
 
+- [rpc-types-engine] Add hidden setters to ExecutionPayload ([#3875](https://github.com/alloy-rs/alloy/issues/3875))
+- Add amsterdam fields ([#3871](https://github.com/alloy-rs/alloy/issues/3871))
+
+### Miscellaneous Tasks
+
+- Release 1.8.3 ([#3848](https://github.com/alloy-rs/alloy/issues/3848))
+- Release 1.8.2
+
+## [1.8.1](https://github.com/alloy-rs/alloy/releases/tag/v1.8.1) - 2026-03-25
+
+### Miscellaneous Tasks
+
+- Release 1.8.1
+- Release 1.8.0
+
+## [1.7.4](https://github.com/alloy-rs/alloy/releases/tag/v1.7.4) - 2026-03-09
+
+### Bug Fixes
+
+- Correct Debug trait name for `JwtSecret` ([#3736](https://github.com/alloy-rs/alloy/issues/3736))
+
+### Miscellaneous Tasks
+
+- Release 1.7.4
+- Release 1.7.3
+- Release 1.7.2
+
+### Performance
+
+- [engine] Remove serde(flatten) from execution payload types ([#3713](https://github.com/alloy-rs/alloy/issues/3713))
+
+## [1.7.1](https://github.com/alloy-rs/alloy/releases/tag/v1.7.1) - 2026-02-17
+
+### Dependencies
+
+- Remove jsonrpsee dependencies ([#3690](https://github.com/alloy-rs/alloy/issues/3690))
+
+### Features
+
+- [provider] Add engine_getBlobsV1/V2 to EngineApi trait ([#3670](https://github.com/alloy-rs/alloy/issues/3670))
 - [rpc-types-engine] Add `into_block_raw_with_transactions_root` to execution payloads ([#3452](https://github.com/alloy-rs/alloy/issues/3452))
 
 ### Miscellaneous Tasks
 
+- Release 1.7.1
+- Release 1.7.0
+- Release 1.6.3
 - Release 1.6.2
 
 ## [1.6.1](https://github.com/alloy-rs/alloy/releases/tag/v1.6.1) - 2026-02-03
